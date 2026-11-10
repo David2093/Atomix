@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build app for Live Server",
+      "type": "shell",
+      "command": "npm.cmd run build -- --watch",
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "dedicated"
+      },
+      "problemMatcher": {
+        "base": "$tsc-watch",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^vite v.* building client environment for production\\.\\.\\.$",
+          "endsPattern": "^watching for file changes\\.\\.\\.$"
+        }
+      }
+    }
+  ]
+}

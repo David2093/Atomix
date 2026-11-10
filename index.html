@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070a10" />
+    <meta name="description" content="ATOMIX — an immersive journey into the beautiful structures that shape our universe." />
+    <title>ATOMIX — Beyond the Visible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Atomix home"><span class="brand-mark"><i></i><i></i><i></i></span><span>ATOMIX<span class="brand-dot">.</span></span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="nav-link is-active" href="#home">Explore</a><a class="nav-link" href="#lab">Atomic lab</a><a class="nav-link" href="#molecules">Molecules</a><a class="nav-link" href="#quantum">Quantum</a><a class="nav-link" href="#about">About</a>
+      </nav>
+      <div class="header-right"><span class="live-status"><i></i> SYSTEM ONLINE</span><label class="quality-control mono">RENDER <select id="quality-select" aria-label="Rendering quality"><option>AUTO</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></label><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button></div>
+    </header>
+    <div class="mobile-nav" aria-hidden="true"><a href="#home">Explore <span>01</span></a><a href="#lab">Atomic lab <span>02</span></a><a href="#molecules">Molecules <span>03</span></a><a href="#quantum">Quantum <span>04</span></a><a href="#about">About <span>05</span></a></div>
+
+    <main>
+      <section class="hero section" id="home" data-scene="hero">
+        <div class="hero-canvas scene-canvas" id="hero-scene" aria-label="Interactive three-dimensional atom visualization"></div>
+        <div class="hero-vignette" aria-hidden="true"></div>
+          <h1>Beyond<br />the <em>visible.</em></h1>
+          <p class="hero-intro">The universe is built from things<br class="desktop-break" /> the human eye cannot see.</p>
+          <button class="text-cta" id="explore-atom"><span class="cta-ring"><span>↘</span></span><span>EXPLORE THE ATOM</span></button>
+        </div>
+        <div class="hero-side-note mono"><span>HELIUM&nbsp; / &nbsp;02</span><span>THE SIMPLEST STRUCTURE<br />IS NEVER SIMPLE.</span></div>
+        <div class="hero-footer mono"><span>01 — A NEW PERSPECTIVE</span><span class="scroll-cue"><i></i> SCROLL TO DESCEND</span><span>SCROLL TO EXPLORE <b>↓</b></span></div>
+        <div class="hero-index mono"><span>01</span><i></i><span>05</span></div>
+      </section>
+
+      <section class="intro-section section" id="about">
+        <div class="section-top mono"><span>01 &nbsp; / &nbsp; THE INVISIBLE WORLD</span><span>FROM THE VERY SMALL TO THE INFINITE</span></div>
+        <div class="intro-layout">
+          <p class="intro-kicker">EVERYTHING<br />BEGINS <em>HERE.</em></p>
+          <div class="intro-body"><span class="crosshair">✳</span><p>Look closer. Matter begins to tell a different story: of charged particles, improbable bonds, and forces that hold entire worlds together.</p><p class="muted-copy">ATOMIX is an invitation to move through those hidden architectures — one atom, one connection, one discovery at a time.</p><a class="inline-link" href="#lab">ENTER THE ATOMIC LAB <span>↗</span></a></div>
+        </div>
+        <div class="orbit-graphic" aria-hidden="true"><span class="orbit-orb"></span><span class="orbit-label mono">MATTER / 10⁻¹⁰ M</span></div>
+        <div class="intro-bottom mono"><span>FIG 01. THE SCALE OF THINGS</span><span>PRESSURE / 1 ATM</span></div>
+      </section>
+
+      <section class="lab-section section" id="lab">
+        <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> INTERACTIVE ATLAS</p><h2>Atomic <em>lab.</em></h2></div><p class="heading-note">Choose an element.<br />See what holds it together.</p></div>
+        <div class="lab-shell">
+          <div class="lab-view scene-frame"><div id="lab-scene" class="scene-canvas" aria-label="Interactive element model"></div><div class="scene-corner mono"><span>LIVE MODEL</span><span>01 — 09</span></div><div class="model-label mono"><span class="model-label-line"></span><span>NUCLEAR<br />STRUCTURE</span></div><div class="lab-view-bottom mono"><span id="lab-coordinate">X 04.82 &nbsp; Y 09.17</span><span>DRAG TO ORBIT</span></div></div>
+          <aside class="lab-panel">
+            <div class="panel-top mono"><span>ELEMENT SELECTOR</span><span>01 — 09</span></div>
+            <div class="element-list" role="tablist" aria-label="Choose an element">
+              <button class="element-option is-selected" role="tab" aria-selected="true" data-element="He"><span class="element-number">02</span><span class="element-name">Helium</span><span class="element-symbol">He</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="H"><span class="element-number">01</span><span class="element-name">Hydrogen</span><span class="element-symbol">H</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="C"><span class="element-number">06</span><span class="element-name">Carbon</span><span class="element-symbol">C</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="N"><span class="element-number">07</span><span class="element-name">Nitrogen</span><span class="element-symbol">N</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="O"><span class="element-number">08</span><span class="element-name">Oxygen</span><span class="element-symbol">O</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="Ne"><span class="element-number">10</span><span class="element-name">Neon</span><span class="element-symbol">Ne</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="Na"><span class="element-number">11</span><span class="element-name">Sodium</span><span class="element-symbol">Na</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="Fe"><span class="element-number">26</span><span class="element-name">Iron</span><span class="element-symbol">Fe</span></button>
+              <button class="element-option" role="tab" aria-selected="false" data-element="Au"><span class="element-number">79</span><span class="element-name">Gold</span><span class="element-symbol">Au</span></button>
+            </div>
+            <div class="element-facts"><div class="fact-title"><span id="element-name">HELIUM</span><span class="element-charge">+2</span></div><p class="element-subtitle" id="element-description">A noble gas with a remarkably stable nucleus.</p><div class="facts-grid"><div><span>ATOMIC NUMBER</span><b id="atomic-number">02</b></div><div><span>ATOMIC MASS</span><b id="atomic-mass">4.0026 <small>u</small></b></div><div><span>PROTONS</span><b id="protons">02</b></div><div><span>NEUTRONS</span><b id="neutrons">02</b></div><div><span>ELECTRONS</span><b id="electrons">02</b></div><div class="configuration"><span>CONFIGURATION</span><b id="configuration">1s²</b></div></div></div>
+            <div class="lab-controls"><div class="control-row"><label for="rotation-speed">ROTATION SPEED</label><output id="rotation-output">0.6×</output><input id="rotation-speed" type="range" min="0" max="2" step="0.1" value="0.6" /></div><div class="control-row"><label for="glow-intensity">FIELD INTENSITY</label><output id="glow-output">72%</output><input id="glow-intensity" type="range" min="20" max="100" step="1" value="72" /></div><div class="control-row"><label for="particle-intensity">PARTICLE DENSITY</label><output id="particle-output">55%</output><input id="particle-intensity" type="range" min="10" max="100" step="1" value="55" /></div><div class="control-row"><label for="camera-distance">CAMERA DISTANCE</label><output id="distance-output">8.5</output><input id="camera-distance" type="range" min="6" max="13" step="0.1" value="8.5" /></div><div class="toggle-row"><span>ORBITAL FIELD</span><button class="switch is-on" id="orbital-toggle" role="switch" aria-checked="true" aria-label="Toggle orbital field"><i></i></button></div><div class="toggle-row"><span>VISUALIZATION</span><button class="mode-toggle" id="visualization-mode">FIELD <span>↔</span> PARTICLE</button></div></div>
+          </aside>
+        </div>
+        <div class="section-foot mono"><span>INTERACTIVE MODEL / NOT TO SCALE</span><span>DATA SOURCE / IUPAC PERIODIC TABLE</span><span>02 — EXPLORE</span></div>
+      </section>
+
+      <section class="molecule-section section" id="molecules">
+        <div class="section-heading molecule-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> STRUCTURES OF CONNECTION</p><h2>Small bonds.<br /><em>Big worlds.</em></h2></div><p class="heading-note">Change the view.<br />Rotate the structure.</p></div>
+        <div class="molecule-layout"><div class="molecule-view scene-frame"><div id="molecule-scene" class="scene-canvas" aria-label="Interactive 3D molecule model"></div><div class="molecule-caption mono"><span>FIG 02. <b id="molecule-short-name">WATER</b></span><span id="molecule-angle">104.5° / BENT</span></div><div class="molecule-orient mono">DRAG TO ROTATE <span>⤢</span></div></div><div class="molecule-info"><div class="molecule-number mono" id="molecule-number">01 / 06</div><h3 id="molecule-name">Water</h3><p class="formula" id="molecule-formula">H<sub>2</sub>O</p><p class="molecule-description" id="molecule-description">Two hydrogen atoms share their electrons with oxygen, creating the bent geometry behind one of nature’s most essential molecules.</p><div class="molecule-composition"><span>COMPOSITION</span><b id="molecule-composition">2H · 1O</b></div><div class="molecule-composition"><span>MOLECULAR MASS</span><b id="molecule-mass">18.015 <small>g/mol</small></b></div><div class="molecule-mode-label mono">VIEW MODE</div><div class="view-modes" role="group" aria-label="Molecule rendering mode"><button class="is-active" data-mode="ball">BALL & STICK</button><button data-mode="space">SPACE FILL</button><button data-mode="bond">BONDS</button><button data-mode="minimal">MINIMAL</button></div><div class="molecule-picker" role="group" aria-label="Choose molecule"><button class="is-active" data-molecule="water">H<sub>2</sub>O</button><button data-molecule="co2">CO<sub>2</sub></button><button data-molecule="methane">CH<sub>4</sub></button><button data-molecule="oxygen">O<sub>2</sub></button><button data-molecule="ammonia">NH<sub>3</sub></button><button data-molecule="glucose">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></button></div></div></div>
+        <div class="section-foot mono"><span>MOLECULAR GEOMETRIES / SCHEMATIC</span><span>ATOMS CONNECT THROUGH SHARED ELECTRONS</span><span>03 — EXPLORE</span></div>
+      </section>
+
+      <section class="quantum-section section" id="quantum">
+        <div class="quantum-top"><div><p class="eyebrow"><span class="eyebrow-line"></span> FIELD STUDY 04 / DYNAMIC SYSTEM</p><h2>Order in<br />the <em>unknown.</em></h2></div><p class="quantum-lede">A particle is a point until you ask where it is.<br />Then the whole field begins to move.</p></div>
+        <div class="quantum-stage scene-frame"><div id="quantum-scene" class="scene-canvas" aria-label="Interactive quantum particle field"></div><div class="quantum-readout mono"><span><i class="readout-dot"></i> FIELD ACTIVE</span><span id="particle-readout">1,600 PARTICLES</span></div><div class="quantum-instruction mono">MOVE YOUR CURSOR<br />THROUGH THE FIELD <span>↗</span></div><div class="quantum-axis mono"><span>X</span><span>Y</span><span>Z</span></div></div>
+        <div class="quantum-controls"><div class="preset-list" role="group" aria-label="Particle field preset"><button class="is-active" data-preset="cloud">QUANTUM CLOUD</button><button data-preset="burst">ENERGY BURST</button><button data-preset="magnetic">MAGNETIC FIELD</button><button data-preset="collision">PARTICLE COLLISION</button><button data-preset="galaxy">GALAXY MODE</button></div><div class="quantum-sliders"><div class="quantum-slider"><label for="particle-count">PARTICLE COUNT <output id="count-output">1,600</output></label><input id="particle-count" type="range" min="400" max="3200" step="200" value="1600" /></div><div class="quantum-slider"><label for="field-strength">FIELD STRENGTH <output id="strength-output">58%</output></label><input id="field-strength" type="range" min="0" max="100" value="58" /></div><div class="quantum-slider"><label for="movement-speed">MOVEMENT SPEED <output id="speed-output">1.0×</output></label><input id="movement-speed" type="range" min="2" max="20" value="10" /></div><div class="quantum-slider"><label for="attraction-force">ATTRACTION <output id="attraction-output">42%</output></label><input id="attraction-force" type="range" min="0" max="100" value="42" /></div><div class="quantum-slider"><label for="repulsion-force">REPULSION <output id="repulsion-output">28%</output></label><input id="repulsion-force" type="range" min="0" max="100" value="28" /></div><div class="quantum-slider"><label for="particle-glow">GLOW INTENSITY <output id="particle-glow-output">68%</output></label><input id="particle-glow" type="range" min="10" max="100" value="68" /></div></div></div>
+        <div class="section-foot mono"><span>PARTICLE FIELD / GPU-ACCELERATED</span><span>INTERACTION CHANGES THE LOCAL FIELD</span><span>04 — EXPLORE</span></div>
+      </section>
+
+      <section class="discovery-section section" id="discoveries">
+        <div class="section-top mono"><span>05 &nbsp; / &nbsp; A FIELD GUIDE</span><span>QUESTIONS LEAD TO MORE QUESTIONS</span></div><div class="discovery-head"><h2>Keep looking<br /><em>closer.</em></h2><p>Six doorways into the unseen.<br />Choose one and begin again.</p></div>
+        <div class="discovery-grid"><a class="discovery-card card-atom" href="#lab"><span class="card-index mono">01 / MATTER</span><div class="card-art art-atom" aria-hidden="true"><i></i><i></i><i></i><b></b></div><div class="card-copy"><h3>The atom</h3><span class="card-arrow">↗</span><p>The architecture<br />beneath everything.</p></div></a><a class="discovery-card card-quantum" href="#quantum"><span class="card-index mono">02 / UNCERTAINTY</span><div class="card-art art-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="card-copy"><h3>Quantum physics</h3><span class="card-arrow">↗</span><p>Where probability<br />becomes a world.</p></div></a><a class="discovery-card card-molecule" href="#molecules"><span class="card-index mono">03 / CONNECTION</span><div class="card-art art-molecule" aria-hidden="true"><i></i><i></i><i></i><b></b></div><div class="card-copy"><h3>Molecules</h3><span class="card-arrow">↗</span><p>Small structures.<br />Endless consequence.</p></div></a><a class="discovery-card card-energy" href="#quantum"><span class="card-index mono">04 / FORCE</span><div class="card-art art-energy" aria-hidden="true"><i></i><i></i><i></i></div><div class="card-copy"><h3>Electromagnetism</h3><span class="card-arrow">↗</span><p>The invisible force<br />that gives light its path.</p></div></a><a class="discovery-card card-particle" href="#quantum"><span class="card-index mono">05 / COLLISION</span><div class="card-art art-particle" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div><div class="card-copy"><h3>Particles</h3><span class="card-arrow">↗</span><p>Fragments that reveal<br />a deeper pattern.</p></div></a><a class="discovery-card card-cosmos" href="#about"><span class="card-index mono">06 / SCALE</span><div class="card-art art-cosmos" aria-hidden="true"><i></i><i></i><i></i><b></b></div><div class="card-copy"><h3>Space & matter</h3><span class="card-arrow">↗</span><p>One continuous story,<br />at every scale.</p></div></a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark"><i></i><i></i><i></i></span><span>ATOMIX<span class="brand-dot">.</span></span></a><p>THE BEAUTY OF THE INVISIBLE.</p><span class="mono">AN INTERACTIVE EXPLORATION OF MATTER &nbsp; · &nbsp; 2026</span><a class="back-top mono" href="#home">BACK TO THE SURFACE ↑</a></footer>
+    <div class="custom-cursor" aria-hidden="true"><span></span></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
