@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { createStage, addStarField } from './createStage.js';
 import { molecules } from '../data/molecules.js';
+import { extraMolecules } from '../data/extraMolecules.js';
+
+const moleculeData = { ...molecules, ...extraMolecules };
 
 const palette = {
   H: { color: 0xcfd8dd, emissive: 0x24343a }, C: { color: 0x75898c, emissive: 0x17292e },
@@ -8,7 +11,7 @@ const palette = {
 };
 
 function buildMolecule(key, mode) {
-  const data = molecules[key], group = new THREE.Group();
+  const data = moleculeData[key], group = new THREE.Group();
   const spread = Math.max(...data.atoms.map(atom => new THREE.Vector3(...atom.position).length()));
   const fit = spread > 2.8 ? 2.8 / spread : 1;
   const atomGeometry = new THREE.SphereGeometry(1, 28, 24);
@@ -77,7 +80,7 @@ export function createMoleculeScene(container) {
     molecule.shell.rotation.set(time * .035, time * .055, time * -.025);
   });
   function setMolecule(key) {
-    if (!molecules[key] || key === currentKey) return molecules[key];
+    if (!moleculeData[key] || key === currentKey) return moleculeData[key];
     currentKey = key;
     group.remove(molecule.group);
     molecule.group.traverse(obj => { if (obj !== molecule.group) { obj.geometry?.dispose(); if (obj.material) Array.isArray(obj.material) ? obj.material.forEach(m=>m.dispose()) : obj.material.dispose(); } });

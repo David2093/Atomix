@@ -3,3 +3,54 @@
 @media(max-width:540px){:root{--page-pad:22px}.hero{min-height:720px}.hero-meta{top:92px;font-size:7px}.coordinates{display:none}.hero-copy{top:27%}.hero-copy h1{font-size:clamp(72px,17vw,98px);margin:25px 0 18px}.hero-intro{font-size:12px}.hero-side-note{right:22px;bottom:124px}.hero-index{display:none}.hero-footer{font-size:7px}.hero-footer>span:last-child{display:none}.scroll-cue{margin-left:auto}.intro-section{padding-top:32px;min-height:650px}.section-top{font-size:7px}.section-top span:last-child{display:none}.intro-layout{grid-template-columns:1fr;gap:30px;padding:68px 0 90px}.intro-kicker{font-size:clamp(61px,15vw,80px)}.intro-body{padding-left:20px;max-width:100%}.crosshair{left:-1px;top:-35px}.intro-body p{font-size:13px}.orbit-graphic{width:125px;height:125px;right:14%;top:22%;opacity:.5}.orbit-label{font-size:6px;right:-35px}.intro-bottom{font-size:7px}.intro-bottom span:last-child{display:none}.lab-section,.molecule-section,.quantum-section{padding-top:76px}.section-heading{align-items:flex-start;flex-direction:column;gap:17px;margin-bottom:30px}.section-heading h2,.molecule-heading h2,.quantum-top h2{font-size:clamp(60px,16vw,78px);margin-top:14px}.heading-note{margin:0;font-size:11px}.lab-view{min-height:350px}.lab-panel{padding:17px 15px}.lab-panel .element-list{grid-template-columns:repeat(3,1fr)}.element-option{height:48px;padding:6px 8px}.element-name{font-size:9px}.lab-controls{gap:0 14px}.control-row label,.toggle-row>span{font-size:6px}.section-foot{font-size:7px;gap:8px}.section-foot span:nth-child(2){display:none}.molecule-heading{margin-bottom:30px}.molecule-layout{gap:20px}.molecule-view{min-height:365px}.molecule-caption{left:14px;right:14px;bottom:15px;font-size:7px}.molecule-orient{right:14px;top:15px;font-size:7px}.molecule-info h3{font-size:31px}.molecule-description{font-size:10px}.view-modes button{font-size:6px;padding:10px 3px}.quantum-top{display:block;margin-bottom:25px}.quantum-lede{margin:19px 0 0;font-size:13px}.quantum-stage{height:350px}.quantum-readout{left:13px;right:13px;top:14px;font-size:7px}.quantum-instruction{left:13px;bottom:14px;font-size:7px}.quantum-axis{right:13px;bottom:14px}.quantum-sliders{grid-template-columns:1fr;gap:19px}.preset-list{gap:6px}.preset-list button{padding:8px 9px;font-size:6px}.discovery-section{padding-top:72px;padding-bottom:70px}.discovery-head{display:block;margin:38px 0 32px}.discovery-head h2{font-size:clamp(59px,16vw,78px)}.discovery-head>p{margin:18px 0 0;font-size:11px}.discovery-grid{gap:8px}.discovery-card,.discovery-card:nth-child(n){grid-column:span 6;min-height:225px}.card-index{top:13px;left:13px;font-size:7px}.card-copy{left:14px;bottom:15px;right:14px}.card-copy h3{font-size:17px}.card-copy p{font-size:8px}.site-footer{padding:25px var(--page-pad);gap:13px}.site-footer p{font-size:7px}.site-footer>span{font-size:6px}.back-top{font-size:7px}.site-footer .brand{font-size:11px}.hero-canvas{inset:1% -30% 4% 0;opacity:.8}}
 @media(max-width:360px){:root{--page-pad:17px}.hero-copy h1{font-size:68px}.hero-copy{top:29%}.lab-panel{padding:14px 11px}.element-option{padding:5px}.element-name{font-size:8px}.element-symbol{font-size:7px}.molecule-picker{gap:4px}.molecule-picker button{min-width:34px}.section-foot span:first-child{max-width:70%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+@media(min-width:1600px){
+  :root{--page-pad:clamp(96px,5.5vw,190px)}
+  .section-heading,.section-top,.section-foot,.lab-shell,.molecule-layout,.quantum-top,.quantum-stage,.quantum-controls,.discovery-head,.discovery-grid{max-width:2600px;margin-left:auto;margin-right:auto}
+  .lab-shell{grid-template-columns:minmax(0,1.55fr) minmax(390px,.75fr)}
+  .lab-view{min-height:clamp(610px,35vw,860px)}
+  .molecule-layout{grid-template-columns:minmax(0,1.35fr) minmax(390px,.65fr);gap:clamp(60px,5vw,120px)}
+  .molecule-view{min-height:clamp(600px,34vw,840px)}
+  .quantum-stage{height:clamp(540px,34vw,820px)}
+}
+@media(min-width:2600px){
+  :root{--page-pad:clamp(160px,6vw,260px)}
+  .section-heading,.section-top,.section-foot,.lab-shell,.molecule-layout,.quantum-top,.quantum-stage,.quantum-controls,.discovery-head,.discovery-grid{max-width:2800px}
+  .lab-view{min-height:clamp(760px,32vw,980px)}
+  .molecule-view{min-height:clamp(720px,31vw,960px)}
+}
+@media(max-width:980px){
+  .site-header{height:72px}
+  .site-header .desktop-nav{display:none}
+  .site-header .menu-toggle{display:block}
+  .mobile-nav{display:flex;inset:72px 0 0}
+}
+@media(max-width:800px){
+  .site-header{height:68px}
+  .mobile-nav{inset:68px 0 0}
+}
+@media(max-width:540px){
+  .lab-panel .element-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lab-controls{grid-template-columns:1fr}
+  .molecule-info{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .molecule-picker button{min-height:38px}
+  .view-modes button{flex:1 1 42%;min-width:0}
+}
+@media(max-width:380px){
+  .site-header{padding-inline:15px}
+  .brand{gap:7px;font-size:11px}
+  .header-right{gap:7px}
+  .lab-view{min-height:310px}
+  .molecule-view{min-height:320px}
+  .quantum-stage{height:310px}
+  .lab-panel .element-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+
+@media(min-width:801px) and (max-width:980px){
+  .mobile-nav{position:fixed;z-index:29;flex-direction:column;justify-content:center;padding:30px var(--page-pad);background:rgba(8,11,17,.97);backdrop-filter:blur(20px);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,transform .3s,visibility .3s}
+  .mobile-nav.is-open{opacity:1;visibility:visible;transform:none}
+  .mobile-nav a{padding:18px 0;border-bottom:1px solid var(--line);font-size:clamp(28px,5vw,40px);letter-spacing:-.06em}
+  .mobile-nav a span{float:right;font:9px var(--mono);color:var(--cyan);padding-top:12px}
+}

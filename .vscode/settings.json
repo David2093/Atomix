@@ -1,3 +1,5 @@
 {
-  "liveServer.settings.root": "/dist"
+  "liveServer.settings.root": "/dist",
+  "liveServer.settings.file": "/index.html",
+  "task.allowAutomaticTasks": "on"
 }

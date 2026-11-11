@@ -1,0 +1,484 @@
+{
+  "courses": [
+    {
+      "id": "atomic-architecture",
+      "title": "The architecture of an atom",
+      "category": "Atomic physics",
+      "level": "FOUNDATION",
+      "description": "Build a clear picture of the nucleus, orbitals and the forces that make matter stable.",
+      "durationMinutes": 42,
+      "accent": "cyan"
+    },
+    {
+      "id": "quantum-states",
+      "title": "Quantum states & measurement",
+      "category": "Quantum mechanics",
+      "level": "INTERMEDIATE",
+      "description": "Explore superposition, probability amplitudes and what a measurement changes.",
+      "durationMinutes": 58,
+      "accent": "violet"
+    },
+    {
+      "id": "molecular-bonds",
+      "title": "How molecules hold together",
+      "category": "Chemistry",
+      "level": "FOUNDATION",
+      "description": "Follow electrons from atomic orbitals into covalent bonds and molecular geometry.",
+      "durationMinutes": 46,
+      "accent": "acid"
+    },
+    {
+      "id": "fields-forces",
+      "title": "Fields, charge & light",
+      "category": "Electromagnetism",
+      "level": "INTERMEDIATE",
+      "description": "Connect electric fields, magnetic fields and electromagnetic waves.",
+      "durationMinutes": 52,
+      "accent": "cyan"
+    },
+    {
+      "id": "particle-zoo",
+      "title": "A map of fundamental particles",
+      "category": "Particle physics",
+      "level": "ADVANCED",
+      "description": "Meet quarks, leptons and bosons through the interactions that connect them.",
+      "durationMinutes": 64,
+      "accent": "violet"
+    },
+    {
+      "id": "cosmic-elements",
+      "title": "Where the elements come from",
+      "category": "Cosmology",
+      "level": "INTERMEDIATE",
+      "description": "Trace the elements from primordial nucleosynthesis to stellar explosions.",
+      "durationMinutes": 49,
+      "accent": "acid"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "atomic-architecture-03",
+      "courseId": "atomic-architecture",
+      "title": "Orbitals are probability maps",
+      "summary": "Read orbitals as patterns of possible measurement outcomes.",
+      "body": "3",
+      "position": "A quantum state predicts the probability of finding an electron in different regions. Orbital shapes come from solutions to the Schrödinger equation for an atom, and each orbital can hold at most two electrons with opposite spin.",
+      "quiz": [
+        {
+          "question": "An orbital primarily describes…",
+          "options": [
+            "A fixed electron path",
+            "A probability distribution",
+            "A proton shell"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "atomic-architecture-01",
+      "courseId": "atomic-architecture",
+      "title": "A nucleus with a cloud around it",
+      "summary": "Separate the compact nucleus from the much larger electron probability cloud.",
+      "body": "1",
+      "position": "An atom is mostly open volume. Protons and neutrons occupy a tiny, dense nucleus, while electrons are described by quantum states spread through the surrounding region. The familiar orbit drawing is a useful map, but it is not a miniature solar system.",
+      "quiz": [
+        {
+          "question": "Where is most of an atom’s mass?",
+          "options": [
+            "In the electron cloud",
+            "In the nucleus",
+            "Spread evenly"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "atomic-architecture-02",
+      "courseId": "atomic-architecture",
+      "title": "Charge and the electromagnetic force",
+      "summary": "Understand why opposite charges attract and like charges repel.",
+      "body": "2",
+      "position": "Protons carry positive electric charge and electrons carry negative charge. The electromagnetic interaction binds electrons to nuclei. Neutrons have no net electric charge, though their internal quark structure still participates in the strong interaction.",
+      "quiz": [
+        {
+          "question": "What holds electrons to an atomic nucleus?",
+          "options": [
+            "Gravity",
+            "Electromagnetism",
+            "The strong force"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "cosmic-elements-01",
+      "courseId": "cosmic-elements",
+      "title": "The first light nuclei",
+      "summary": "Start with the first minutes of cosmic history.",
+      "body": "1",
+      "position": "During Big Bang nucleosynthesis, the hot early universe formed mostly hydrogen and helium nuclei, with small amounts of deuterium, helium-3 and lithium-7. Heavier elements formed later inside stars and stellar explosions.",
+      "quiz": [
+        {
+          "question": "Which elements dominated after Big Bang nucleosynthesis?",
+          "options": [
+            "Hydrogen and helium",
+            "Iron and gold",
+            "Carbon and oxygen"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "cosmic-elements-03",
+      "courseId": "cosmic-elements",
+      "title": "Explosive element factories",
+      "summary": "Trace neutron capture in stellar events.",
+      "body": "3",
+      "position": "Rapid neutron capture, or the r-process, can create many neutron-rich heavy nuclei. Neutron-star mergers are confirmed sites of r-process nucleosynthesis, while the exact contributions of different astrophysical environments continue to be studied.",
+      "quiz": [
+        {
+          "question": "The r-process is rapid capture of…",
+          "options": [
+            "Neutrons",
+            "Photons",
+            "Electrons"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "cosmic-elements-02",
+      "courseId": "cosmic-elements",
+      "title": "Stars build new nuclei",
+      "summary": "Follow fusion from hydrogen toward heavier elements.",
+      "body": "2",
+      "position": "Stars release energy by fusing light nuclei. Massive stars can build elements up to the iron group through successive burning stages. Beyond iron, many nuclei require energy input or neutron-capture processes.",
+      "quiz": [
+        {
+          "question": "Ordinary stellar fusion releases energy most readily for…",
+          "options": [
+            "Light nuclei fusing",
+            "Iron splitting",
+            "Gold capture"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "fields-forces-02",
+      "courseId": "fields-forces",
+      "title": "Changing fields make waves",
+      "summary": "Follow coupled electric and magnetic variations.",
+      "body": "2",
+      "position": "A changing electric field is accompanied by a changing magnetic field. Together they can propagate as an electromagnetic wave at the speed of light in vacuum. Radio, visible light and X-rays share this structure.",
+      "quiz": [
+        {
+          "question": "Visible light is a kind of…",
+          "options": [
+            "Sound wave",
+            "Electromagnetic wave",
+            "Matter wave only"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "fields-forces-01",
+      "courseId": "fields-forces",
+      "title": "A field is a rule for force",
+      "summary": "Represent how a charge responds at each point in space.",
+      "body": "1",
+      "position": "An electric field assigns a force per unit positive test charge at every location. Field lines are a visualization: their direction follows the force on a positive test charge, and their density indicates field strength.",
+      "quiz": [
+        {
+          "question": "Electric field is force per…",
+          "options": [
+            "Unit charge",
+            "Unit mass",
+            "Unit distance"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "fields-forces-03",
+      "courseId": "fields-forces",
+      "title": "Energy in a photon",
+      "summary": "Connect frequency to the energy carried by light.",
+      "body": "3",
+      "position": "Photon energy is proportional to frequency: E = h f. Higher-frequency light carries more energy per photon. Intensity instead describes how much energy arrives over an area and time.",
+      "quiz": [
+        {
+          "question": "If photon frequency rises, its energy…",
+          "options": [
+            "Rises",
+            "Falls",
+            "Stays fixed"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "molecular-bonds-01",
+      "courseId": "molecular-bonds",
+      "title": "Sharing electrons",
+      "summary": "Explain how a covalent bond forms from shared electron density.",
+      "body": "1",
+      "position": "A covalent bond forms when atoms share electron density in a way that lowers the system’s energy. Bonding and antibonding orbitals, nuclear repulsion and electron correlation all contribute to the final structure.",
+      "quiz": [
+        {
+          "question": "A covalent bond involves…",
+          "options": [
+            "Shared electron density",
+            "Shared neutrons",
+            "A magnetic monopole"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "molecular-bonds-03",
+      "courseId": "molecular-bonds",
+      "title": "Polarity and attraction",
+      "summary": "Relate uneven charge distribution to intermolecular forces.",
+      "body": "3",
+      "position": "A polar molecule has an uneven distribution of electron density. Partial charges can attract other polar molecules, while temporary fluctuations create dispersion forces present in all atoms and molecules.",
+      "quiz": [
+        {
+          "question": "Which interaction exists in all atoms?",
+          "options": [
+            "Dispersion forces",
+            "Permanent dipoles only",
+            "Covalent bonds between atoms"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "molecular-bonds-02",
+      "courseId": "molecular-bonds",
+      "title": "Shape follows electron pairs",
+      "summary": "Predict why water is bent while carbon dioxide is linear.",
+      "body": "2",
+      "position": "Molecular geometry reflects the arrangement of bonding and lone electron pairs. Water has two O–H bonds and two lone pairs around oxygen, producing a bent shape. Carbon dioxide has two electron domains at carbon and is linear.",
+      "quiz": [
+        {
+          "question": "What is the shape of water?",
+          "options": [
+            "Linear",
+            "Bent",
+            "Tetrahedral"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "particle-zoo-02",
+      "courseId": "particle-zoo",
+      "title": "Bosons carry interactions",
+      "summary": "Meet photons, gluons and the Higgs boson.",
+      "body": "2",
+      "position": "In the Standard Model, gauge bosons mediate interactions: photons for electromagnetism, gluons for the strong force, and W and Z bosons for the weak interaction. The Higgs field is associated with the Higgs boson.",
+      "quiz": [
+        {
+          "question": "Which particle mediates electromagnetism?",
+          "options": [
+            "Photon",
+            "Gluon",
+            "Neutrino"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "particle-zoo-01",
+      "courseId": "particle-zoo",
+      "title": "Quarks and leptons",
+      "summary": "Sort the matter particles into two families.",
+      "body": "1",
+      "position": "Quarks combine into hadrons such as protons and neutrons. Leptons include electrons and neutrinos. Both families have three generations, though the heavier generations decay rapidly into lighter particles.",
+      "quiz": [
+        {
+          "question": "Protons are built from…",
+          "options": [
+            "Quarks",
+            "Leptons",
+            "Photons"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "particle-zoo-03",
+      "courseId": "particle-zoo",
+      "title": "What the Standard Model leaves open",
+      "summary": "Separate confirmed theory from unanswered questions.",
+      "body": "3",
+      "position": "The Standard Model is a highly successful framework for known elementary particles and three interactions. It does not include gravity as a quantum interaction and does not explain dark matter, neutrino masses in its minimal form, or the matter–antimatter imbalance.",
+      "quiz": [
+        {
+          "question": "Which interaction is not included in the Standard Model?",
+          "options": [
+            "Gravity",
+            "Electromagnetism",
+            "Strong interaction"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "quantum-states-03",
+      "courseId": "quantum-states",
+      "title": "What a measurement records",
+      "summary": "Distinguish an interaction with a detector from a passive look.",
+      "body": "3",
+      "position": "A measurement couples a system to a physical apparatus and leaves a record. The outcome is probabilistic, but the probability distribution is constrained by the quantum state and the chosen measurement.",
+      "quiz": [
+        {
+          "question": "A measurement is best described as…",
+          "options": [
+            "A detector interaction that records an outcome",
+            "A human glance",
+            "A particle changing species"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "quantum-states-01",
+      "courseId": "quantum-states",
+      "title": "Superposition before measurement",
+      "summary": "Describe a quantum state as a combination of possible outcomes.",
+      "body": "1",
+      "position": "A superposition is a coherent combination of basis states. The amplitudes can interfere, so probabilities depend on both their size and their relative phase. This is different from simply not knowing which classical state is present.",
+      "quiz": [
+        {
+          "question": "What can relative phase change?",
+          "options": [
+            "Interference probabilities",
+            "The particle’s mass",
+            "The detector size"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "quantum-states-02",
+      "courseId": "quantum-states",
+      "title": "Interference as evidence",
+      "summary": "Connect wave amplitudes to the patterns seen in experiments.",
+      "body": "2",
+      "position": "When alternatives remain indistinguishable, their amplitudes add before probabilities are calculated. If the alternatives become distinguishable, interference fades. The two-slit experiment makes this rule visible as a changing pattern of detections.",
+      "quiz": [
+        {
+          "question": "When do amplitudes add?",
+          "options": [
+            "Before probabilities, for indistinguishable alternatives",
+            "Only after detection",
+            "Never"
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "inside-the-electron-cloud",
+      "title": "Inside the electron cloud",
+      "category": "Quantum physics",
+      "excerpt": "Why an atom is not a miniature solar system.",
+      "body": "Electrons occupy quantum states rather than tiny planetary tracks. An orbital maps where an electron is likely to be detected, and the shape of that map follows from the wavefunction.\\n\\nThe cloud picture is useful because it keeps probability visible. It also reminds us that a measurement yields a localized result even though the state spread across space can predict many possible locations.\\n\\nFor hydrogen, the orbital solutions can be found exactly. Multi-electron atoms require approximations because the electrons interact with one another. Modern computational chemistry turns those approximations into practical predictions for materials and molecules.",
+      "readMinutes": 5,
+      "publishedAt": "2026-10-28",
+      "accent": "violet"
+    },
+    {
+      "id": "water-is-a-strange-liquid",
+      "title": "The unexpected physics of water",
+      "category": "Chemistry",
+      "excerpt": "A bent molecule with an outsized influence on climate and life.",
+      "body": "Water’s bent geometry and polar O–H bonds create an uneven charge distribution. Nearby molecules form transient hydrogen-bond networks that continually break and reform.\\n\\nThat network helps explain water’s high heat capacity, surface tension and unusual density maximum near 4 °C. None of those properties belongs to a single isolated molecule; they emerge from many molecules interacting together.\\n\\nIn cells, oceans and the atmosphere, water is both a solvent and an active participant in chemical and thermal processes.",
+      "readMinutes": 4,
+      "publishedAt": "2026-10-23",
+      "accent": "cyan"
+    },
+    {
+      "id": "how-starlight-reveals-elements",
+      "title": "Reading the elements in starlight",
+      "category": "Astrophysics",
+      "excerpt": "Spectral lines turn distant light into a chemical fingerprint.",
+      "body": "Atoms absorb and emit photons at energies tied to their allowed states. A spectroscope spreads incoming light by wavelength, revealing dark absorption lines or bright emission lines.\\n\\nBecause each element has its own pattern of transitions, astronomers can infer composition, temperature and motion from spectra. A shift in line position also reveals whether a source is moving toward or away from us.\\n\\nSpectroscopy connects laboratory measurements to objects far beyond direct reach, from stellar atmospheres to exoplanets.",
+      "readMinutes": 4,
+      "publishedAt": "2026-10-19",
+      "accent": "acid"
+    },
+    {
+      "id": "the-quantum-vacuum",
+      "title": "The quantum vacuum is not empty",
+      "category": "Quantum physics",
+      "excerpt": "What physicists mean by a vacuum state.",
+      "body": "A vacuum is the lowest-energy state of a field, not a box with every field removed. Quantum fields still have measurable correlations, and the vacuum can respond to boundaries, acceleration and strong fields.\\n\\nThe Casimir effect is one example in which boundary conditions change the forces between conducting surfaces. Its explanation comes from quantum electrodynamics and measurable changes in field modes.\\n\\nPopular descriptions of particles endlessly popping in and out of existence are metaphors. The more precise account uses field states, correlation functions and observables.",
+      "readMinutes": 5,
+      "publishedAt": "2026-10-14",
+      "accent": "violet"
+    },
+    {
+      "id": "a-map-of-the-standard-model",
+      "title": "A map of the Standard Model",
+      "category": "Particle physics",
+      "excerpt": "The matter particles and interactions in one compact framework.",
+      "body": "The Standard Model organizes quarks, leptons and force-carrying bosons. Its structure predicts a wide range of collider measurements with remarkable precision.\\n\\nThe framework is not a final theory of everything. It does not quantize gravity, identify dark matter, or explain why the observable universe contains more matter than antimatter. Those gaps guide current experiments and theoretical work.\\n\\nA useful map includes both what is known and the boundaries where evidence stops.",
+      "readMinutes": 5,
+      "publishedAt": "2026-10-08",
+      "accent": "cyan"
+    },
+    {
+      "id": "why-iron-matters-to-stars",
+      "title": "Why iron marks a turning point in stars",
+      "category": "Astrophysics",
+      "excerpt": "Fusion gains energy up to iron-group nuclei, then the balance changes.",
+      "body": "For many nuclei lighter than the iron group, fusion can release energy because the products are more tightly bound. Fusing nuclei beyond that region generally costs energy.\\n\\nIn a massive star, an iron-rich core cannot continue the same energy-producing fusion chain. When the core becomes unstable, collapse can trigger a supernova. The explosion then disperses elements made in the star and in the event.\\n\\nThe exact nucleosynthesis of heavy elements involves several processes and astrophysical sites, including neutron-star mergers.",
+      "readMinutes": 4,
+      "publishedAt": "2026-10-02",
+      "accent": "acid"
+    },
+    {
+      "id": "magnetic-fields-in-motion",
+      "title": "Fields in motion",
+      "category": "Electromagnetism",
+      "excerpt": "How changing electric and magnetic fields travel together.",
+      "body": "Maxwell’s equations link electric and magnetic fields. A changing magnetic field induces an electric field; changing electric fields contribute to magnetic fields.\\n\\nIn free space these linked changes propagate as electromagnetic waves. Their wavelength and frequency determine whether we call them radio waves, infrared, visible light, ultraviolet, X-rays or gamma rays.\\n\\nThe same equations describe antennas, optics and signals traveling through interstellar space.",
+      "readMinutes": 4,
+      "publishedAt": "2026-09-26",
+      "accent": "cyan"
+    },
+    {
+      "id": "molecules-have-shapes",
+      "title": "Molecules have shapes",
+      "category": "Chemistry",
+      "excerpt": "Geometry controls how molecules interact and react.",
+      "body": "A molecular structure records the three-dimensional arrangement of nuclei. Bond angles and distances influence polarity, reactivity and the way molecules fit together.\\n\\nWater is bent, carbon dioxide is linear, and methane is tetrahedral. These shapes are connected to electron density and quantum mechanics, while computational tools help estimate structures too large to solve by hand.\\n\\nA static diagram is only one view: molecules vibrate, rotate and respond to their surroundings.",
+      "readMinutes": 3,
+      "publishedAt": "2026-09-18",
+      "accent": "violet"
+    }
+  ]
+}

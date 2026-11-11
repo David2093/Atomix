@@ -4,13 +4,16 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
 export function createStage(container, { fov = 36, cameraZ = 8, bloom = false, background = 0x000000 } = {}) {
+  container.dataset.sceneStatus = 'waiting';
   const scene = new THREE.Scene();
   scene.background = null;
   scene.fog = new THREE.FogExp2(background, 0.024);
   const camera = new THREE.PerspectiveCamera(fov, 1, 0.1, 100);
   camera.position.set(0, 0, cameraZ);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, window.innerWidth < 700 ? 1.25 : 1.7));
+  const pixelRatioCap = () => window.innerWidth < 700 ? 1.1 : window.innerWidth > 1900 ? 1.2 : 1.45;
+  const getPixelRatio = () => Math.min(window.devicePixelRatio || 1, pixelRatioCap());
+  renderer.setPixelRatio(getPixelRatio());
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.25;
@@ -27,7 +30,7 @@ export function createStage(container, { fov = 36, cameraZ = 8, bloom = false, b
   const key = new THREE.DirectionalLight(0xd5f2ff, 2.2); key.position.set(4, 5, 6); scene.add(key);
   const rim = new THREE.PointLight(0x42d9df, 18, 16, 2); rim.position.set(-4, 1, -2); scene.add(rim);
   const violet = new THREE.PointLight(0x836bff, 10, 16, 2); violet.position.set(4, -2, 1); scene.add(violet);
-  let visible = true, disposed = false, raf = 0, quality = 'AUTO';
+  let visible = false, disposed = false, renderFailed = false, raf = 0, quality = 'AUTO';
   let lastTime = 0, lowFrames = 0, highFrames = 0, adaptiveScale = 1;
   const clock = new THREE.Clock();
   const resize = () => {
@@ -37,35 +40,57 @@ export function createStage(container, { fov = 36, cameraZ = 8, bloom = false, b
     if (composer) composer.setSize(width, height);
   };
   const resizeObserver = new ResizeObserver(resize); resizeObserver.observe(container); resize();
-  const intersection = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible && !raf) loop(); });
+  const intersection = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible && !raf && !renderFailed) loop(); });
   intersection.observe(container);
   let update = () => {};
   const loop = () => {
-    if (disposed || !visible) { raf = 0; return; }
+    if (disposed || !visible || renderFailed) { raf = 0; return; }
     raf = requestAnimationFrame(loop);
     const delta = Math.min(clock.getDelta(), 0.05), time = clock.elapsedTime;
     if (quality === 'AUTO') {
       if (lastTime && delta > 0.028) { lowFrames++; highFrames = 0; } else { highFrames++; lowFrames = Math.max(0, lowFrames - 1); }
-      if (lowFrames > 80 && adaptiveScale > 0.65) { adaptiveScale = Math.max(0.65, adaptiveScale - 0.15); renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5) * adaptiveScale); if (composer) composer.setPixelRatio(renderer.getPixelRatio()); lowFrames = 0; }
-      if (highFrames > 500 && adaptiveScale < 1) { adaptiveScale = Math.min(1, adaptiveScale + 0.1); renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5) * adaptiveScale); if (composer) composer.setPixelRatio(renderer.getPixelRatio()); highFrames = 0; }
+      if (lowFrames > 80 && adaptiveScale > 0.65) { adaptiveScale = Math.max(0.65, adaptiveScale - 0.15); renderer.setPixelRatio(getPixelRatio() * adaptiveScale); if (composer) composer.setPixelRatio(renderer.getPixelRatio()); lowFrames = 0; }
+      if (highFrames > 500 && adaptiveScale < 1) { adaptiveScale = Math.min(1, adaptiveScale + 0.1); renderer.setPixelRatio(getPixelRatio() * adaptiveScale); if (composer) composer.setPixelRatio(renderer.getPixelRatio()); highFrames = 0; }
     }
     lastTime = delta;
-    update(delta, time);
-    if (composer) composer.render(); else renderer.render(scene, camera);
+    try {
+      update(delta, time);
+      if (composer) composer.render(); else renderer.render(scene, camera);
+      container.dataset.sceneStatus = 'live';
+    } catch (error) {
+      renderFailed = true;
+      container.dataset.sceneStatus = 'error';
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      console.error('ATOMIX 3D scene stopped rendering; showing its static fallback.', error);
+    }
   };
-  loop();
+  const handleContextLost = event => {
+    event.preventDefault();
+    renderFailed = true;
+    container.dataset.sceneStatus = 'error';
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0;
+  };
+  const handleContextRestored = () => {
+    renderFailed = false;
+    container.dataset.sceneStatus = 'waiting';
+    resize();
+    if (visible && !raf) loop();
+  };
+  renderer.domElement.addEventListener('webglcontextlost', handleContextLost, false);
+  renderer.domElement.addEventListener('webglcontextrestored', handleContextRestored, false);
   return {
     scene, camera, renderer, get time() { return clock.elapsedTime; },
     setUpdater(fn) { update = fn; },
     setQuality(value) {
       quality = value;
       const factor = value === 'LOW' ? 0.7 : value === 'MEDIUM' ? 1 : value === 'HIGH' ? 1.2 : 1;
-      const cap = window.innerWidth < 700 ? 1.15 : 1.6;
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, cap) * factor);
+      renderer.setPixelRatio(getPixelRatio() * factor);
       if (composer) composer.setPixelRatio(renderer.getPixelRatio());
       adaptiveScale = 1;
     },
-    dispose() { disposed = true; cancelAnimationFrame(raf); intersection.disconnect(); resizeObserver.disconnect(); renderer.dispose(); composer?.dispose(); },
+    dispose() { disposed = true; cancelAnimationFrame(raf); intersection.disconnect(); resizeObserver.disconnect(); renderer.domElement.removeEventListener('webglcontextlost', handleContextLost); renderer.domElement.removeEventListener('webglcontextrestored', handleContextRestored); renderer.dispose(); composer?.dispose(); },
   };
 }
 

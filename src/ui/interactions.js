@@ -1,5 +1,6 @@
 import { elements } from '../data/elements.js';
 import { molecules } from '../data/molecules.js';
+import { moleculeFallback } from './moleculeFallback.js';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -56,6 +57,7 @@ export function initInteractions({ hero, lab, molecule, quantum, gsap, lenis }) 
   let activeMolecule = 'water';
   const updateMolecule = key => {
     const data = molecule.setMolecule(key); if (!data) return;
+    const fallback = $('.molecule-fallback'); if (fallback) fallback.outerHTML = moleculeFallback(data);
     activeMolecule = key;
     $$('.molecule-picker button').forEach(button => button.classList.toggle('is-active', button.dataset.molecule === key));
     const index = Object.keys(molecules).indexOf(key) + 1;

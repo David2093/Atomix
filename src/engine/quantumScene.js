@@ -33,7 +33,7 @@ const fragment = `
   }
 `;
 
-export function createQuantumScene(container) {
+export function createQuantumScene(container, { core = null } = {}) {
   const stage = createStage(container, { cameraZ: 8.5, fov: 42, bloom: true, background: 0x0a1114 });
   stage.scene.fog = new THREE.FogExp2(0x0a1114, .018);
   const countMax = 3200;
@@ -62,6 +62,10 @@ export function createQuantumScene(container) {
   const aura = new THREE.Mesh(new THREE.SphereGeometry(2.8, 32, 28), new THREE.ShaderMaterial({ transparent:true, depthWrite:false, side:THREE.BackSide, uniforms:{uTime:{value:0}}, vertexShader:`varying vec3 vN;varying vec3 vV;void main(){vN=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(position,1.0);vV=-mv.xyz;gl_Position=projectionMatrix*mv;}`,fragmentShader:`uniform float uTime;varying vec3 vN;varying vec3 vV;void main(){float rim=pow(1.0-max(dot(normalize(vN),normalize(vV)),0.0),3.0);float p=.6+.4*sin(uTime*.7);gl_FragColor=vec4(vec3(.28,.65,.58),rim*.12*p);}` }));
   aura.scale.set(1.38, .83, .55); stage.scene.add(aura);
   let speed = 1, strength = .58, currentMode = 'cloud';
+  const simulatedCount = Math.min(320, countMax);
+  const simulatedPositions = positions.subarray(0, simulatedCount * 3);
+  const simulatedVelocities = new Float32Array(simulatedPositions.length);
+  let physicsAccumulator = 0;
   const modes = { cloud: 0, burst: 1, magnetic: 2, collision: 3, galaxy: 4 };
   const canvas = stage.renderer.domElement;
   const onMove = event => {
@@ -72,6 +76,14 @@ export function createQuantumScene(container) {
   canvas.addEventListener('pointermove', onMove); canvas.addEventListener('pointerleave', onLeave);
   stage.setUpdater((dt, time) => {
     uniforms.uTime.value = time; aura.material.uniforms.uTime.value = time;
+    if (core) {
+      physicsAccumulator += dt;
+      if (physicsAccumulator >= 1 / 30) {
+        core.updateParticles(simulatedPositions, simulatedVelocities, Math.min(physicsAccumulator, .04), uniforms.uAttraction.value, uniforms.uRepulsion.value, strength);
+        geometry.attributes.position.needsUpdate = true;
+        physicsAccumulator = 0;
+      }
+    }
     points.rotation.y += dt * .018; points.rotation.x = Math.sin(time * .11) * .035;
     aura.rotation.y = -time * .012;
   });

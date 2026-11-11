@@ -53,9 +53,10 @@ function buildAtom(symbol, scale = 1) {
   const nuclear = new THREE.Group(); root.add(nuclear);
   const nucleons = scatterNucleons(nuclear, data);
   const orbits = [], electrons = [];
-  const shellRadii = [1.85, 2.55, 3.18, 3.72, 4.15, 4.48];
+  const shellRadii = [1.85, 2.55, 3.18, 3.72, 4.15, 4.48, 4.72];
   const colors = [data.tint, '#77d4db', '#b5a0ff', '#e0d1a0', '#a5c3d8', '#c7a8e9'];
   data.shells.forEach((population, shellIndex) => {
+    if (!population) return;
     const orbitCount = shellIndex === 0 ? 2 : shellIndex < 3 ? 2 : 3;
     for (let j = 0; j < orbitCount; j++) {
       const phase = shellIndex * 0.63 + j * Math.PI / orbitCount;
